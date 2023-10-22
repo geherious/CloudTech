@@ -6,4 +6,4 @@
 Использовались 3 компьютера. 2 работали на Ubuntu на виртуальной машине, 3 - Mac.
 Для доступа к виртуальным машинам внутри локальной сети в VirtualBox был настроен Проброс портов, то есть запросы приходящие на основную систему в порт 2222 (в нашем случае) пробрасывались в VM в порт 22.
 
-![https://github.com/geherious/CloudTech/blob/master/lab1/Images/img_1.jpg]
+!(https://github.com/geherious/CloudTech/blob/master/lab1/Images/img_1.jpg)
