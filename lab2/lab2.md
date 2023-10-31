@@ -20,25 +20,25 @@ sudo apt-get update
 ```
 В роли содержимого контейнера будет выступать простой http server на python. Для начала мы создадим две папки для 2 образов: хорошего и плохого. Они будут различаться только Dockerfile.
 
-Сперва создадим окружение с помощью команды
+Сперва создадим и подключим окружение с помощью команды
 ```
 python3 -m venv env
+source myenv/bin/activate
 ```
-![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab1/Images/img_1.jpg)
+Создадим server.py
+```
+import http.server
+import socketserver
+ 
+PORT = 8000
+ 
+Handler = http.server.SimpleHTTPRequestHandler
+ 
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print("Сервер запущен на порту", PORT)
+    httpd.serve_forever()
+```
 
-Также необходимо было открыть порты для входящих подключений в брандмауэре Windows и отключить антивирус, чтобы появилась возможность подключаться.
-![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab1/Images/img_2.jpg)
-
-В Ubuntu необходимо настроить фаервол, прописав команды:
-- sudo ufw allow ssh
-- sudo ufw enable
-
-## Подключение:
-На компьютерах с Ubuntu, в основной операционной системе получаем ip адреса с помощью команды ipconfig (Windows). Затем с Mac подключаемся к первому компьютеру с помощью команды ssh, указывая порт, имя пользователя, ip, а затем и пароль.
-
-![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab1/Images/img_3.jpg)
-
-Для передачи файла используется команда scp, которой мы передаем порт, начальную папку на компьютере 1, имя пользователя и его ip и конечную папку. Далее вводим пароль и созданный ранее myfile передается на второй компьютер.
 
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab1/Images/img_4.jpg)
 
