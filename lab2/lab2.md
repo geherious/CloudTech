@@ -1,4 +1,4 @@
-# Лабораторная работа 2# Лабораторная работа 1
+# Лабораторная работа 2
 ## Цель работы:
 Выявить плохие практики при написании Dockerfile и работе с контейнерами.
 
@@ -37,6 +37,34 @@ Handler = http.server.SimpleHTTPRequestHandler
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
     print("Сервер запущен на порту", PORT)
     httpd.serve_forever()
+```
+Теперь созадим плохой Dockerfile
+```
+FROM python:latest
+ 
+RUN apt-get update
+RUN apt-get install -y curl
+RUN apt-get install python3-pip -y
+
+COPY server.py ./
+ 
+EXPOSE 8000
+ 
+CMD python server.py
+
+```
+И хороший
+```
+FROM python:3.10
+
+RUN apt-get update && apt-get install -y curl
+
+COPY server.py ./
+ 
+EXPOSE 8000
+ 
+CMD ["python", "server.py"]
+
 ```
 
 
