@@ -73,10 +73,13 @@ docker build -t good .
 ```
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2/images/img-1.jpg)
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2/images/img-2.jpg)
+
 Список образов:
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2/images/img-3.jpg)
+
 Запустим например хороший докер файл
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2/images/img-4.jpg)
+
 Тогда перейдя по ссылке localhost:8000 в браузере, можно увидеть файловую систему
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2/images/img-5.jpg)
 
