@@ -66,7 +66,12 @@ EXPOSE 8000
 CMD ["python", "server.py"]
 
 ```
-
+Создадим image для плохого и хорошего докер файла, с помощью команд, находясь в соответствующих названию папках
+```
+docker build -t bad .
+docker build -t good .
+```
+Запустим например хороший докер файл
 
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab1/Images/img_4.jpg)
 
