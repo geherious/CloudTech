@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber-training
+  labels:
+    app: data
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data
+  template:
+    metadata:
+      labels:
+        app: data
+    spec:
+      containers:
+      - name: data
+        image: geherious/cloud-tech:1.0
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+          name: http
