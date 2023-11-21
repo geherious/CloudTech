@@ -39,6 +39,31 @@ sudo mv minikube /usr/local/bin/
 ```
 minikube start --driver=docker
 ```
+## Работа с кластером
+В качестве докер образа будем использовать http сервер из предыдущей лабораторной работы
+```
+FROM python:3.10
+
+RUN apt-get update && apt-get install -y curl
+
+COPY server.py ./
+ 
+EXPOSE 8000
+ 
+CMD ["python", "server.py"]
+```
+
+Создадим image и запушим его в Docker Hub, предварительно создав удаленный репозиторий.
+```
+sudo docker build -t good .
+sudo docker login
+<Вводим логин и пароль>
+sudo docker tag good geherious/cloud-tech:1.0
+sudo docker push 752fd55140bb geherious/cloud-tech:1.0
+```
+
+
+
 
 
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2/images/img-5.jpg)
