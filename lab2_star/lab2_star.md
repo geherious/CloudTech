@@ -40,6 +40,7 @@ sudo mv minikube /usr/local/bin/
 minikube start --driver=docker
 ```
 ## Работа с кластером
+### Docker:
 В качестве докер образа будем использовать http сервер из предыдущей лабораторной работы
 ```
 FROM python:3.10
@@ -61,13 +62,69 @@ sudo docker login
 sudo docker tag good geherious/cloud-tech:1.0
 sudo docker push 752fd55140bb geherious/cloud-tech:1.0
 ```
-
-
-
-
-
-![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2/images/img-5.jpg)
-месте с ним при его смерти, поэтому надо использовать mount и volume.
+![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2_star/images/img-1.png)
+### Deployment:
+Создадим deployment.yaml
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber-training
+  labels:
+    app: data
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data
+  template:
+    metadata:
+      labels:
+        app: data
+    spec:
+      containers:
+      - name: data
+        image: geherious/cloud-tech:1.0
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+          name: http
+```
+Создадим deployment на основе этого файла и выведем его:
+```
+kubectl create -f deployment.yaml
+kubectl get pod -o wide
+```
+![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2_star/images/img-2.png)
+### Service:
+Создадим service.yaml:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: data
+  name: data-service
+spec:
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: data
+  type: NodePort
+```
+Создадим service на основе файла и выведем его:
+```
+kubectl create -f service.yaml
+kubectl get svc -o wide
+```
+![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2_star/images/img-3.png)
+Для доступа к сервису используем команду, которая выведет url для доступа к сервису:
+```
+minikube service data-service --url
+```
+![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab2_star/images/img-4.png)
 
 ## Вывод:
-Мы разобрались в работе докер контейнеров, выявили плохие практики написания докер файлов и использовании контейнеров.
+Мы разобрались в работе kubernetes, создали простейшие deployment и service.
