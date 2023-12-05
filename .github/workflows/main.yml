@@ -25,7 +25,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./lab3/good/
           file: ./lab3/good/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/cloud-tech:latest
