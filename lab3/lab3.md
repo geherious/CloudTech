@@ -46,8 +46,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./good/Dockerfile
+          context: ./lab3/good/
+          file: ./lab3/good/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/cloud-tech:latest
 ```
@@ -67,7 +67,11 @@ jobs:
 Также в этом action мы использем github secrets для хранения секретов, а точнее логина и пароля от докерхаба.
 
 ## Тестирование
+Сделаем пуш в мастер и посмотрим на результат. Action успешно выполняется
+![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab3/images/img-1.png)
 
-Сделаем пуш в мастер и посмотрим на результат.
+Образ появился на докерхабе
+![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab3/images/img-2.png)
+
 ## Вывод:
 Мы разобрались в работе github actions и создали базовый action для работы с докером
