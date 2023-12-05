@@ -72,5 +72,6 @@ jobs:
 
 Образ появился на докерхабе
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/lab3/images/img-2.png)
+
 ## Вывод:
 Мы разобрались в работе github actions и создали базовый action для работы с докером
