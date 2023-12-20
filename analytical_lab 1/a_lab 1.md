@@ -5,7 +5,9 @@
 1. Слепок данных биллинга от провайдера после небольшой обработки в виде SQL-параметров
 2. Документация провайдера
 ### Слепок данных биллинга:
+
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/analytical_lab%201/images/img-1.jpg)
+
 # Исследование AWS сервисов и поиск их доступных аналогов
 ---
 ### Amazon Macie
@@ -39,9 +41,11 @@ Elasticsearch — это популярный поисковой и аналит
 ---
 # Исследование слепка данных биллинга и классификация сервисов по схеме ATUM
 Для правильного применения модели были использованы материалы компании Apptio, разработчика ATUM, доступные на их официальном сайте apptio.com.
+
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/analytical_lab%201/images/img-2.jpg)
 
 Для упрощения установления соответствия между сервисами AWS и их аналогами при помощи Apptio TBM Unified Model и документации AWS была заполнена таблица, представленная ниже. 
+
 ![Рисунок](https://github.com/geherious/CloudTech/blob/master/analytical_lab%201/images/img-3.jpg)
 
 # Итоговое сопоставление
