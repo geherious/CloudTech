@@ -42,11 +42,11 @@ Elasticsearch — это популярный поисковой и аналит
 # Исследование слепка данных биллинга и классификация сервисов по схеме ATUM
 Для правильного применения модели были использованы материалы компании Apptio, разработчика ATUM, доступные на их официальном сайте apptio.com.
 
-![Рисунок](https://github.com/geherious/CloudTech/blob/master/analytical_lab%201/images/img-2.jpg)
+![Рисунок](https://github.com/geherious/CloudTech/blob/master/analytical_lab%201/images/img-3.jpg)
 
 Для упрощения установления соответствия между сервисами AWS и их аналогами при помощи Apptio TBM Unified Model и документации AWS была заполнена таблица, представленная ниже. 
 
-![Рисунок](https://github.com/geherious/CloudTech/blob/master/analytical_lab%201/images/img-3.jpg)
+![Рисунок](https://github.com/geherious/CloudTech/blob/master/analytical_lab%201/images/img-2.jpg)
 
 # Итоговое сопоставление
 | AWS | Аналог |
